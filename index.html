@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GOMAP</title>
+    <!--scripts to be loaded to start app-->
+    <link href="lib/spinkit.css" rel = "stylesheet">
+    <link href="lib/please-wait.css" rel="stylesheet">
+</head>
+<body ng-app="gomap">
+<!--static part.....header part....-->
+<div id="bluePart" style="border: solid 5px black">
+    <ul class="nav nav-tabs" >
+        <li  role="presentation" ><a href="#/gmap"><h5 style="color: firebrick">HOME</h5></a></li>
+        <li role="presentation"><a href="#/adminLogin"><h5 style="color: firebrick">ADMIN</h5></a></li>
+        <li class="col-xs-offset-9" style="color:darkslateblue;margin-top: 1%"><h4>G O M A P S</h4></li>
+    </ul>
+</div>
+
+<!--dynamic part......-->
+<div ui-view >
+    <a ui-sref="gmap"></a>
+
+</div>
+<script type="text/javascript" src="lib/please-wait.js"></script>
+<script type="text/javascript">
+
+    var loading_screen = pleaseWait({
+        logo: "./img/gomps.jpg",
+        backgroundColor: 'white',
+        loadingHtml: "<p ><h1 style = 'color:deepskyblue'>GOMAPS<br><br>please Wait...</h1></p><div class='sk-cube-grid'> <div class = 'sk-cube sk-cube1'></div> <div class= 'sk-cube sk-cube2'></div> <div class='sk-cube sk-cube3'></div> <div class='sk-cube sk-cube4'></div> <div class='sk-cube sk-cube5'></div> <div class='sk-cube sk-cube6'></div> <div class='sk-cube sk-cube7'></div> <div class='sk-cube sk-cube8'></div> <div class='sk-cube sk-cube9'></div> </div>"    });
+</script>
+<script src="lib/angular.js"></script>
+<link href="lib/bootstrap.css" rel="stylesheet">
+<link href = "lib/loading-bar.css"  rel='stylesheet' type='text/css' media='all'>
+<script src="lib/loading-bar.js"></script>
+<link href="style.css" rel="stylesheet">
+<script src="lib/angular-ui-router.min.js"></script>
+<script src="lib/firebase.js"></script>
+<script src="lib/angular_firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDSWsiEN-TOLgJ0QdxgFTm1B4sLJqua8qM",
+        authDomain: "gomaps-7c9b8.firebaseapp.com",
+        databaseURL: "https://gomaps-7c9b8.firebaseio.com",
+        storageBucket: "gomaps-7c9b8.appspot.com",
+    };
+    firebase.initializeApp(config);
+</script>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSWsiEN-TOLgJ0QdxgFTm1B4sLJqua8qM">
+</script>
+<script src="app.js"></script>
+<script src="controllers.js"></script>
+<script src="factory.js"></script>
+</body>
+</html>

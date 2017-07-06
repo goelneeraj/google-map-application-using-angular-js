@@ -1,0 +1,50 @@
+<div >
+
+    <div class="row">
+        <!--area for form-->
+        <div class="col-xs-3 ">
+            <form>
+
+                    <div class="form-group">
+                        <label>LATITUDE</label>
+                        <input type="text" placeholder="enter latitude"  class="form-control" ng-model="amc.place.lat">
+                    </div>
+                    <div class="form-group">
+                        <label>LONGITUDE</label>
+                        <input type="text" placeholder="enter LONGITUDE"  class="form-control" ng-model="amc.place.lng">
+                    </div>
+                <div class="form-group">
+                    <label>NAME OF PLACE</label>
+                    <input type="text" placeholder="enter place name"  class="form-control" ng-model="amc.place.name">
+                </div>
+                <div class="form-group">
+                    <label>DESCRIPTION</label>
+                    <textarea type="text" placeholder="enter details"  class="form-control" ng-model="amc.place.desc"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>CATEGORY</label>
+
+                    <select class="form-control"  ng-model="amc.place.category">
+                        <option value="" default >select categories..</option>
+                        <option value="temples" >temples</option>
+                        <option value="tourism"  >tourism</option>
+                        <option value="cinema" >cinema</option>
+                        <option value="university and colleges" >university and colleges</option>
+                        <option value="hotel" >hotel</option>
+                    </select>
+
+                </div>
+                <button ng-click="amc.submit(amc.place)" type="button" ng-disabled="!amc.place.name || !amc.place.desc || !amc.place.lat || !amc.place.lng" class="btn btn-lg btn-primary btn-block">SUBMIT</button>
+                <button ng-click="amc.logout()" class="btn btn-danger btn-lg btn-block">LOGOUT</button>
+            </form>
+        </div>
+        <!--map area for maps-->
+        <div class="col-xs-9 "  id="mapForAdmin" >     </div>
+
+    </div>
+
+
+
+
+</div>

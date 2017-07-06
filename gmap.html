@@ -1,0 +1,39 @@
+<div style="padding-left: 2px" class="row" >
+    <div class="col-xs-6" style="background-color: deepskyblue;border-right: solid 5px black">
+            <select  ng-model="gmc.searchbox" style="background-color: lightcyan">
+                    <option value="" selected >First select categories here....</option>
+                    <option value="temples" >temples</option>
+                    <option value="tourism"  >tourism</option>
+                    <option value="cinema" >cinema</option>
+                    <option value="university and colleges" >university and colleges</option>
+                    <option value="hotel" >hotel</option>
+                    <option value="all">all</option>
+            </select>
+    </div>
+
+
+    <div class=" col-xs-6 " style="background-color: deepskyblue">
+            <select ng-model="gmc.match" style="background-color: lightcyan">
+                    <option value="" selected>after selecting categories, select particular place...</option>
+                    <option ng-repeat="n in gmc.particular">{{n.name}}</option>
+            </select>
+    </div>
+</div>
+<div style="padding-left: 2px" class="row">
+        <div class="col-xs-6" style="background-color: deepskyblue;border-right: solid 5px black;border-bottom: solid 5px black">
+                <button class="btn btn-primary" ng-click="gmc.search()">search</button>
+        </div>
+        <div class="col-xs-6" style="background-color: deepskyblue;border-bottom: solid 5px black">
+                <button class="btn btn-success" ng-click="gmc.seeonmap()">see on map</button>
+        </div>
+</div>
+
+
+        <!--<input type="text"  placeholder="search as temples,cinema..">-->
+
+
+</div>
+<div id="mapForAll"  >
+
+
+</div>
